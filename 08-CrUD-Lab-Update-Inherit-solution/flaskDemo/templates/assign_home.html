@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+     {% for row in outString %}
+       <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <small class="text-muted">{{ row['fname'] }}  {{ row['lname'] }} works on {{ row['pname'] }}</small>		  
+            </div>
+		      	<h2><a class="article-title" href="{{ url_for('assign',pno=row.pno, essn=row.ssn) }}">{{ row.fname }}</a></h2>  
+          </div>
+        </article>
+     {% endfor %}
+     <!-- <table style="width: 100%;" class="table">
+       <tr>
+         <th>Emoployee ID</th>
+         <th>Emoployee Name</th>
+         <th>Project ID</th>
+         <th>Project Name</th>
+       </tr>
+     {% for row in outString %}
+      <tr>
+        <td>{{ row['ssn'] }}</td>
+        <td>{{ row['fname'] }}  {{ row['lname'] }}</td>
+        <td>{{ row['pno'] }}</td>
+        <td>{{ row['fname'] }}  {{ row['lname'] }}</td>
+      </tr>
+     {% endfor %}
+    </table> -->
+
+{% endblock content %}
